@@ -12,8 +12,3 @@ This is a simple **interactive multiple-choice quiz game** built using **FastAPI
 - **FastAPI** (backend)
 - **Jinja2** (templates)
 - **Python 3.9+**
-
-## ▶️ Run the project
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
