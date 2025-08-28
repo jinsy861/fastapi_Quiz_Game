@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Question</title></head>
+<body>
+    <h2>{{question.text}}</h2>
+    <form method="post" action="/answer/{{qid}}">
+        {% if question.__class__.__name__ == "SingleChoiceQuestion" %}
+            {% for opt in question.options %}
+                <input type="radio" name="answer" value="{{opt}}"> {{opt}}<br>
+            {% endfor %}
+        {% elif question.__class__.__name__ == "MultiSelectQuestion" %}
+            {% for opt in question.options %}
+                <input type="checkbox" name="multi_answer" value="{{opt}}"> {{opt}}<br>
+            {% endfor %}
+        {% elif question.__class__.__name__ == "FillBlankQuestion" %}
+            <input type="text" name="fill" placeholder="Type your answer">
+        {% endif %}
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
